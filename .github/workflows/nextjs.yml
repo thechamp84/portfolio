@@ -3,7 +3,7 @@ name: Deploy Next.js to GitHub Pages
 on:
   push:
     branches:
-      - main  # Trigger on push to the main branch
+      - dev  # Trigger on push to the main branch
 
 jobs:
   build:
