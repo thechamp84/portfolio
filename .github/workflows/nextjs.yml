@@ -15,19 +15,19 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '18.x'  # Update to a compatible version (e.g., 18.x or 20.x)
+          node-version: '18.x'  # Set to a compatible Node.js version
 
       - name: Install dependencies
         run: npm install
 
       - name: Build Next.js app
-        run: npm run build
+        run: npm run build  # Build the app as normal
 
       - name: Export static site
-        run: npm run export
+        run: npm run build  # Since 'output: export' is set, no need to run next export manually
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages  # The branch where GitHub Pages will be deployed
-          folder: out       # The folder containing the exported files
+          folder: out       # The folder containing the exported static files
